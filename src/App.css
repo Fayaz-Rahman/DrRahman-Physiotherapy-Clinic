@@ -1,0 +1,147 @@
+<<<<<<< HEAD
+.app-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #589adc;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #3498db;
+}
+
+.cta-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+=======
+/* =======================================
+   Dr. Rahman's Physiotherapy Clinic App Styles
+   ======================================= */
+
+/* Reset the old centering and padding */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* General Page Structure */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* Logo Styles */
+.logo {
+  height: 5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 0.5rem hsl(var(--accent) / 0.6));
+}
+
+/* =======================================
+   Custom Utility Enhancements
+   ======================================= */
+
+/* Section Styling */
+section {
+  scroll-margin-top: 80px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Divider between sections */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  width: 60%;
+  margin: 3rem auto;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* Subtle fade-in effect on section load */
+.section-fade {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* Smooth hover elevation for cards */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+/* =======================================
+   Footer
+   ======================================= */
+footer {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+>>>>>>> fayaz
