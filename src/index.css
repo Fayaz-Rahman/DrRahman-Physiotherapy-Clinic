@@ -122,3 +122,13 @@ body {
   background-color: hsl(var(--background));
   overflow-x: hidden;
 }
+
+/* 🧩 Fix white stripe issue completely */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* ensures no white background ever bleeds through */
+  overflow-x: hidden;
+}
+
+

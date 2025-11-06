@@ -5,57 +5,55 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center"
+      className="relative -mt-[88px] min-h-screen flex items-center overflow-hidden bg-cover bg-center pt-[88px]"
       style={{
         backgroundImage: `url(${heroImage})`,
-        backgroundSize: "110%", // ✅ Zooms in the image to fill viewport
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
       }}
     >
-      {/* Dark Overlay for Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-transparent z-0"></div>
+      {/* Overlay for cinematic effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent sm:bg-gradient-to-r z-0"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+      {/* Hero Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 pt-12 pb-6 lg:pt-16">
+
+
+        <div className="flex flex-col lg:flex-row items-center gap-10">
+          <div className="text-white text-center sm:text-left max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_3px_10px_rgba(0,0,0,0.6)]">
+            {/* Welcome Tag */}
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-medium rounded-full text-sm border border-accent/20">
+              <span className="inline-block px-4 py-2 bg-[hsl(var(--primary)/0.15)] text-[hsl(var(--primary))] font-medium rounded-full text-sm border border-[hsl(var(--primary)/0.3)] backdrop-blur-sm">
                 👋 Welcome to Dr. Rahman’s Physiotherapy Clinic
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            {/* Headings */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="block text-white">Recover.</span>
-              <span className="block text-gradient-accent">Restore.</span>
+              <span className="block text-[hsl(var(--primary))]">Restore.</span>
               <span className="block text-white">Rebuild.</span>
             </h1>
 
-            <p
-              className="text-lg md:text-xl mb-8 max-w-xl"
-              style={{
-                textShadow: "0 2px 8px rgba(0,0,0,0.7)",
-                color: "rgba(255,255,255,0.95)",
-              }}
-            >
+            {/* Description */}
+            <p className="text-base sm:text-lg md:text-xl mb-8 text-gray-200 leading-relaxed">
               At{" "}
               <span className="font-semibold text-white">
                 Dr. Rahman’s Physiotherapy Clinic
               </span>{" "}
-              in Villivakkam, we combine science, skill, and compassion to help you
-              move better, live stronger, and heal faster — one session at a time.
+              in Villivakkam, we combine science, skill, and compassion to help
+              you move better, live stronger, and heal faster — one session at a
+              time.
             </p>
 
-            {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4">
               <button
                 onClick={() => {
                   const element = document.querySelector("#contact");
                   if (element) element.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-hero inline-flex items-center justify-center gap-2 group"
+                className="btn-hero inline-flex items-center justify-center gap-2 group px-8 py-4 text-base sm:text-lg font-semibold"
               >
                 <Calendar className="h-5 w-5 group-hover:animate-bounce-gentle" />
                 Book Appointment
@@ -64,34 +62,28 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">
-                  Flexible
+            <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/20">
+              {[
+                { label: "Appointments", value: "Flexible" },
+                { label: "Patients Treated", value: "2500+" },
+                { label: "Satisfaction Rate", value: "99%" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-xl sm:text-3xl font-bold text-[hsl(var(--primary))]">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
-                <div className="text-white/80 text-sm">Appointments</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">
-                  2500+
-                </div>
-                <div className="text-white/80 text-sm">Patients Treated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">
-                  99%
-                </div>
-                <div className="text-white/80 text-sm">Satisfaction Rate</div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Optional: Keep Wave Divider */}
+      {/* Decorative Wave */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
         <svg
-          className="relative block w-full h-24 md:h-32 lg:h-40 text-[hsl(var(--background))]"
+          className="relative block w-full h-20 sm:h-28 md:h-36 lg:h-44 text-[hsl(var(--background))]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
