@@ -15,7 +15,8 @@ const About = () => {
             <img
               src={doctorImage}
               alt="Dr. R.B. Ijaj Rahman, Consultant Physiotherapist"
-              className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+             className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+
             />
           </div>
 
