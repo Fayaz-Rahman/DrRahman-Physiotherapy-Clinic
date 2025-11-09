@@ -61,8 +61,8 @@ const Contact = () => {
       console.log('Sending email with data:', formData);
       
       const result = await emailjs.send(
-        'service_nv5kstp',
-        'template_fcj1v32', 
+        'service_skl3n14',
+        'template_yyzzwk4', 
         {
           appointment_type: formData.appointmentType === "clinic" ? "Clinic Visit" : "Home Visit",
           patient_name: formData.patientName,
@@ -72,14 +72,14 @@ const Contact = () => {
           landmark: formData.landmark,
           preferred_time: formData.preferredTime,
           message: formData.message,
-          to_email: 'gsmddilip1812@gmail.com',
+          to_email: 'rahmanfayaz0110@gmail.com',
           date: new Date().toLocaleString('en-IN', {
             timeZone: 'Asia/Kolkata',
             dateStyle: 'full',
             timeStyle: 'short'
           })
         },
-        'BdkdeyeYJpiMWCSpL'
+        'wiPHIQNxXpP1Rwn-o'
       );
 
       console.log('Email sent successfully:', result);
